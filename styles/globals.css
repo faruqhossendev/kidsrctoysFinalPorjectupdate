@@ -1,16 +1,22 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+.banner_photo img{
+  width: 100%;
+  height: auto;
+}
+.pro_desc{
+  font-size: .9rem;
+}
+.border_none {
+  border: none;
+}
+/* Single post  */
+.post_title {
+  font-family: 'Piedra', cursive;
+  color: gray;
+}
+.hover-color li a:hover {
+  color: orange;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+.post_banner_img{
+  width: 100%;
 }

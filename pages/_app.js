@@ -1,19 +1,27 @@
+import React, {useState} from 'react'
 import fetch from 'isomorphic-unfetch'
 import '../styles/globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
 
+export const KeywordContext = React.createContext()
+
 function MyApp({ Component, pageProps, allmenu, pages, catagorys, banner }) {
-  // console.log('deki', allmenu)
-  // console.log('deki page', pages)
-  // console.log('deki catagoyr', catagorys)
-  console.log('banner', banner)
+  const [keyword, setKeyword] = useState('')
+
+    const keywordHandaler = (e)=>{
+        e.preventDefault()
+        setKeyword(e.target.value)
+    }
   return (
     <>
+    <KeywordContext.Provider value={keyword}>
       <Banner banner={banner} />
-      <Navbar allmenu={allmenu} pages={pages} catagorys={catagorys} />
+      <Navbar allmenu={allmenu} pages={pages} catagorys={catagorys} keywordHandaler={keywordHandaler} />
+
       <Component {...pageProps} />
+    </KeywordContext.Provider>
     </>
   )
 }

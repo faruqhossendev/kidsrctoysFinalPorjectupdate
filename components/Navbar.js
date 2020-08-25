@@ -1,7 +1,8 @@
 import Link from 'next/link'
 
-const Navbar = ({ allmenu, pages, catagorys }) => {
-    return (
+const Navbar = ({ allmenu, pages, catagorys, keywordHandaler }) => {
+   
+    return (    
         <div className="container-fluid bg-dark my-1 sticky-top">
             <div className="container">
                 <nav className=" navbar navbar-expand-lg navbar-dark bg-dark font-weight-bold "  >
@@ -49,7 +50,7 @@ const Navbar = ({ allmenu, pages, catagorys }) => {
                             </li>
                         </ul>
                         <form className="form-inline my-2 my-lg-0">
-                            <input  className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
+                            <input onChange={keywordHandaler} className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
                         </form>
                     </div>
                 </nav>
