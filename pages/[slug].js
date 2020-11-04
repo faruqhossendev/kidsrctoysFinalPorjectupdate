@@ -11,7 +11,7 @@ const Post = ({ post, postadd }) => {
           <h3 className='post_title'>{post.title.rendered}</h3>
           {renderHTML(post.content.rendered)}
         </div>
-        <div className="col-sm-3">
+        <div className="col-sm-3 bg-dark">
           <div>
             <a href={postadd.acf.banner_url} target='_blank'>
               <img className='post_banner_img' src={postadd.acf.banner_image.url} alt={postadd.acf.banner_image.alt} />
