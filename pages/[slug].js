@@ -6,12 +6,12 @@ const Post = ({ post, postadd }) => {
 
   return (
     <div className="container">
+      <h3 className='post_title'>{post.title.rendered}</h3>
       <div className="row">
-        <div className="col-sm-9">
-          <h3 className='post_title'>{post.title.rendered}</h3>
+        <div className="col-md-8 single_content">
           {renderHTML(post.content.rendered)}
         </div>
-        <div className="col-sm-3 bg-dark">
+        <div className="col-md-4 d-none d-md-block">
           <div>
             <a href={postadd.acf.banner_url} target='_blank'>
               <img className='post_banner_img' src={postadd.acf.banner_image.url} alt={postadd.acf.banner_image.alt} />

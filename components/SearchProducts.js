@@ -8,6 +8,7 @@ import { KeywordContext } from '../pages/_app'
 
 const SearchProducts = () => {
     const keyword = useContext(KeywordContext)
+    const [loading, setLoading] = useState(true)
     // console.log('Search component = ', keyword)
     const [searchpost, setSearchposts] = useState([]);
     // console.log('data', searchpost)
@@ -31,10 +32,17 @@ const SearchProducts = () => {
                     return product.title.rendered.toLowerCase().includes(keyword)
                 })
                 setSearchposts(result)
+                setLoading(false)
             })
     }, [keyword])
     return (
         <>
+        {
+          loading && "loading ....."
+        }
+        {
+          searchpost.length == 0 && !loading && "No product found"
+        }
             {
             searchpost.map(products => {
               return (
